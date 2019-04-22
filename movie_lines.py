@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*-
+
+from underthesea import word_tokenize
+
 data_new = open('data_Dang.txt', 'r', encoding='utf-8', errors='ignore').read().split('\n')[:-1]
 
 data_old = open('data25k.txt', 'r', encoding='utf-8', errors='ignore').read().split('\n')[:-1]
-
-movie_lines_full_end = open('data_full_end_only+newdata.txt', 'w', encoding='utf-8', errors='ignore')
 
 data_new = [l.strip() for l in data_new if len(l) > 0]
 data_old = [l.strip()  for l in data_old if len(l) > 0]
@@ -10,11 +12,14 @@ data_old = [l.strip()  for l in data_old if len(l) > 0]
 data_new = [l for l in data_new if len(l) > 0]
 data_old = [l for l in data_old if len(l) > 0]
 
-#data_full = data_old + data_new
+data_new = [word_tokenize(l, format='text') for l in data_new]
+data_old = [word_tokenize(l, format='text') for l in data_old]
 
-num_lines = len(data_full)
+data_full = data_old + data_new
+movie_lines_full_end = open('data_full_end_25k+newdata.txt', 'w', encoding='utf-8', errors='ignore')
 
-data_full = data_new
+#data_full = data_new
+#movie_lines_full_end = open('data_full_end_only+newdata.txt, 'w', encoding='utf-8', errors='ignore')
 
 num_lines = len(data_full)
 

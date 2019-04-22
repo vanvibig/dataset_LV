@@ -9,7 +9,7 @@ movie_conversations_vn = open('movie_conversations_full_25k+newdata.txt', 'w', e
 num_lines = len(data_origin)
 
 for i in range(0,num_lines,2):
-    if i + 2 == num_lines:
+    if i + 2 > num_lines:
         break
     movie_conversations_vn.write("u0 +++$+++ u2 +++$+++ m0 +++$+++ ['L")
     movie_conversations_vn.write(str(i+1) + "', 'L" + str(i+2) + "']")
