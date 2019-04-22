@@ -15,11 +15,11 @@ data_old = [l for l in data_old if len(l) > 0]
 data_new = [word_tokenize(l, format='text') for l in data_new]
 data_old = [word_tokenize(l, format='text') for l in data_old]
 
-data_full = data_old + data_new
-movie_lines_full_end = open('data_full_end_25k+newdata.txt', 'w', encoding='utf-8', errors='ignore')
+#data_full = data_old + data_new
+#movie_lines_full_end = open('data_full_end_25k+newdata.txt', 'w', encoding='utf-8', errors='ignore')
 
-#data_full = data_new
-#movie_lines_full_end = open('data_full_end_only+newdata.txt, 'w', encoding='utf-8', errors='ignore')
+data_full = data_new
+movie_lines_full_end = open('data_full_end_only+newdata.txt', 'w', encoding='utf-8', errors='ignore')
 
 num_lines = len(data_full)
 
